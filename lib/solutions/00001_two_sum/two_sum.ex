@@ -18,8 +18,8 @@ defmodule LeetCodePractice.Solutions.TwoSum do
         nil ->
           {Map.put(map, num, index), result}
 
-        other ->
-          {map, [other, index]}
+        match ->
+          {map, [match, index]}
       end
     end)
     |> elem(1)
