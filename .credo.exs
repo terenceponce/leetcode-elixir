@@ -89,11 +89,6 @@
              priority: :low,
              if_nested_deeper_than: 2,
              if_called_more_often_than: 0,
-             files: %{
-               excluded: [
-                 ~r"/lib/dashfloat_web/components/form_components.ex"
-               ]
-             }
            ]},
           {Credo.Check.Design.SkipTestWithoutComment, []},
           # You can also customize the exit_status of each check.
@@ -108,15 +103,7 @@
           #
           {Credo.Check.Readability.AliasOrder, []},
           {Credo.Check.Readability.FunctionNames, []},
-          {Credo.Check.Readability.ImplTrue,
-           [
-             files: %{
-               excluded: [
-                 ~r"/lib/dashfloat/application.ex",
-                 ~r"/lib/dashfloat_web/live/"
-               ]
-             }
-           ]},
+          {Credo.Check.Readability.ImplTrue, []},
           {Credo.Check.Readability.LargeNumbers, []},
           {Credo.Check.Readability.MaxLineLength, [priority: :low, max_length: 120]},
           {Credo.Check.Readability.ModuleAttributeNames, []},
@@ -135,17 +122,7 @@
           {Credo.Check.Readability.SeparateAliasRequire, []},
           {Credo.Check.Readability.SinglePipe, []},
           {Credo.Check.Readability.SpaceAfterCommas, []},
-          {Credo.Check.Readability.Specs,
-           [
-             files: %{
-               excluded: [
-                 ~r"/lib/dashfloat/contexts/budgeting/policies/checks/",
-                 ~r"/lib/dashfloat_web/components/",
-                 ~r"/lib/dashfloat_web/controllers/",
-                 ~r"/lib/dashfloat_web/live/"
-               ]
-             }
-           ]},
+          {Credo.Check.Readability.Specs, []},
           {Credo.Check.Readability.StrictModuleLayout, []},
           {Credo.Check.Readability.StringSigils, []},
           {Credo.Check.Readability.TrailingBlankLine, []},
