@@ -33,16 +33,12 @@ defmodule LeetCodePractice.Solutions.RomanToInteger do
       |> Enum.with_index()
 
     Enum.reduce(values, 0, fn {x, i}, acc ->
-      if i < length(values) - 1 do
-        next = Enum.at(values, i + 1) |> elem(0)
-
-        if x < next do
-          acc - x
-        else
-          acc + x
-        end
+      with true <- i < length(values) - 1,
+           next <- values |> Enum.at(i + 1) |> elem(0),
+           true <- x < next do
+        acc - x
       else
-        acc + x
+        _ -> acc + x
       end
     end)
   end
