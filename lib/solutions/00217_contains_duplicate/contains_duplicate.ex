@@ -7,13 +7,7 @@ defmodule LeetCodePractice.Solutions.ContainsDuplicate do
   def call(nums) do
     nums
     |> Enum.reduce({[], false}, fn num, {list, _result} ->
-      case Enum.at(list, num) do
-        nil ->
-          {[num | list], false}
-
-        _something ->
-          {[num | list], true}
-      end
+      {[num | list], Enum.member?(list, num)}
     end)
     |> elem(1)
   end
