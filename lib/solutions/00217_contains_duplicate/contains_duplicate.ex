@@ -8,8 +8,9 @@ defmodule LeetCodePractice.Solutions.ContainsDuplicate do
     do_contains_duplicate(nums, %{})
   end
 
-  defp do_contains_duplicate([], _map), do: false
+  defp do_contains_duplicate([], _), do: false
   defp do_contains_duplicate([head | _tail], map) when is_map_key(map, head), do: true
+
   defp do_contains_duplicate([head | tail], map) do
     do_contains_duplicate(tail, Map.put(map, head, nil))
   end
