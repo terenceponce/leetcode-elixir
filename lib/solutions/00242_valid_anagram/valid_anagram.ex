@@ -7,23 +7,15 @@ defmodule LeetCodePractice.Solutions.ValidAnagram do
 
   @spec call(s :: String.t(), t :: String.t()) :: boolean
   def call(s, t) do
-    map1 = do_valid_anagram(s)
-    map2 = do_valid_anagram(t)
+    word1 = do_valid_anagram(s)
+    word2 = do_valid_anagram(t)
 
-    map1 == map2
+    word1 == word2
   end
 
   defp do_valid_anagram(string) do
     string
     |> String.split("")
-    |> Enum.reduce(%{}, fn char, map ->
-      case Map.get(map, char) do
-        nil ->
-          Map.put(map, char, 0)
-
-        occurrences ->
-          Map.put(map, char, occurrences + 1)
-      end
-    end)
+    |> Enum.frequencies()
   end
 end

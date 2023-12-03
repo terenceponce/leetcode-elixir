@@ -38,3 +38,15 @@ my newfound knowledge on some problems that I've dealt with in past jobs.
 Apologies for the rambling, but please give me this small moment of victory.
 
 Anyway, while I did get the solution correct in the first try, I'm 100% sure it is very inefficient.
+
+After I wrote my initial solution, I watched NeetCode's video on this problem and I confirmed that my solution was indeed inefficient.
+
+Another approach would be to just sort both strings and compare them. Honestly, it was the first thing I thought of, but I immediately
+dismissed the thought because I assumed that it would be a very inefficient solution. Apparently, I was wrong, so I looked at the
+top solution for Elixir.
+
+And holy crap, the solution for Elixir feels like cheating. Apparently `Enum.frequencies/1` is a thing and it does exactly what I did
+with my initial solution.
+
+One thing I noticed though is that submitting the new solution doesn't seem to be any improvement over the old one. I tried submitting it
+a second time and the runtime improved. I guess there is some randomness to how efficient a solution would run.
