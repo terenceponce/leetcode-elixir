@@ -100,7 +100,7 @@ defmodule LeetCodePractice.Solutions.MergeTwoSortedListsTest do
               next: %ListNode{
                 val: 4,
                 next: %ListNode{
-                  val: 4,
+                  val: 5,
                   next: nil
                 }
               }
