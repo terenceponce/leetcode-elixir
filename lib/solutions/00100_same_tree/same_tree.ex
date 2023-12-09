@@ -12,15 +12,18 @@ defmodule LeetCodePractice.Solutions.SameTree do
     do_is_same_tree(p, q)
   end
 
-  defp do_is_same_tree(nil, nil), do: true
-  defp do_is_same_tree(nil, _), do: false
-  defp do_is_same_tree(_, nil), do: false
-
-  defp do_is_same_tree(p, q) do
-    if p.val == q.val do
-      do_is_same_tree(p.left, q.left) && do_is_same_tree(p.right, q.right)
+  defp do_is_same_tree(%TreeNode{val: p_val, left: p_left, right: p_right}, %TreeNode{
+         val: q_val,
+         left: q_left,
+         right: q_right
+       }) do
+    if p_val == q_val do
+      do_is_same_tree(p_left, q_left) && do_is_same_tree(p_right, q_right)
     else
       false
     end
   end
+
+  defp do_is_same_tree(nil, nil), do: true
+  defp do_is_same_tree(_, _), do: false
 end
