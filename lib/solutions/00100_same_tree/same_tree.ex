@@ -7,7 +7,7 @@ defmodule LeetCodePractice.Solutions.SameTree do
 
   alias LeetCodePractice.Provisions.TreeNode
 
-  @spec call(p :: TreeNode.t | nil, q :: TreeNode.t | nil) :: boolean
+  @spec call(p :: TreeNode.t() | nil, q :: TreeNode.t() | nil) :: boolean
   def call(p, q) do
     do_is_same_tree(p, q)
   end
