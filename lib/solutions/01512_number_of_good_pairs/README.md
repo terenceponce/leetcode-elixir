@@ -47,3 +47,13 @@ a hint. NeetCode said that this was a formula for statistics to figure out the n
 
 My initial solution has a really high runtime and I'm guessing it's because I looped through the hash map
 after looping through the list. I'm guessing the time complexity is `O(n^2)`, but I could be wrong.
+
+I was able to refine the solution for a bit. Since the solution initially involved a hash map counting the
+number of occurrences, I was able to replace it with `Enum.frequencies/1` because it does the same thing.
+I should probably remember to use that more next time.
+
+Another refinement that I was able to do was to just replace the whole reduce block with `Enum.map` and
+`Enum.sum` since the values of the resulting list from `Enum.map` are just integers.
+
+After refining the solution, I realized that the time complexity is already `O(n)` for the initial solution
+because we're really only going through everything once.

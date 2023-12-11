@@ -8,18 +8,18 @@ defmodule LeetCodePractice.Solutions.NumberOfGoodPairs do
   @spec call(nums :: [integer]) :: integer
   def call(nums) do
     nums
-    |> Enum.reduce(%{}, fn num, map ->
-      case Map.get(map, num) do
-        nil ->
-          Map.put(map, num, 1)
+    |> Enum.frequencies()
+    |> Enum.map(fn {_key, count} ->
+      # Could also just do it this way
+      # (count * (count - 1)) / 2 |> trunc()
+      # I did the pipe approach to make credo happy
 
-        val ->
-          Map.put(map, num, val + 1)
-      end
+      count
+      |> Kernel.-(1)
+      |> Kernel.*(count)
+      |> div(2)
+      |> trunc()
     end)
-    |> Enum.reduce(0, fn {_key, value}, answer ->
-      pairs = (value * (value - 1)) / 2
-      answer + trunc(pairs)
-    end)
+    |> Enum.sum()
   end
 end
