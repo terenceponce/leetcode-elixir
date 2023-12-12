@@ -38,4 +38,15 @@ Output: [0,0,0,0]
 
 ## Thoughts
 
-My initial solution is essentially just a brute force.
+My initial solution is essentially just a brute force. Iterate through each element and from there, iterate once again to check
+how many times the current element is larger than the rest of the elements in the list.
+
+Eventually, I realized that it is indeed possible to use hash maps for this solution by sorting the list first.
+
+By sorting the list, we can store the value of each element according to its index. So in the case of the first example, the
+sorted list would look like this: `[1, 2, 2, 3, 8]`
+
+So `1` would have a value of `0` because it's the first element. It also makes sense because it is the smallest number in the list.
+
+`2` would have a value of `1` because it's the first instance of `2` and it is also just larger than one element. The duplicate `2`
+won't be stored because it should technically still be only larger than one element.

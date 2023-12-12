@@ -8,8 +8,16 @@ defmodule LeetCodePractice.Solutions.HowManyNumbersAreSmallerThanTheCurrentNumbe
 
   @spec call(nums :: [integer]) :: [integer]
   def call(nums) do
+    answer =
+      nums
+      |> Enum.sort()
+      |> Enum.with_index()
+      |> Enum.reduce(%{}, fn {num, index}, map ->
+        Map.put_new(map, num, index)
+      end)
+
     Enum.map(nums, fn num ->
-      Enum.count(nums, &(&1 < num))
+      Map.get(answer, num)
     end)
   end
 end
