@@ -26,6 +26,7 @@ mix test
 - [13 - Roman to Integer](lib/solutions/00013_roman_to_integer)
 - [217 - Contains Duplicate](lib/solutions/00217_contains_duplicate)
 - [242 - Valid Anagram](lib/solutions/00242_valid_anagram)
+- [1207 - Unique Number of Occurrences](lib/solutions/01207_unique_number_of_occurrences)
 - [1365 - How Many Numbers Are Smaller Than The Current Number](lib/solutions/01365_how_many_numbers_are_smaller_than_the_current_number)
 - [1512 - Number of Good Pairs](lib/solutions/01512_number_of_good_pairs)
 
