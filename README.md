@@ -24,6 +24,7 @@ mix test
 
 - [1 - Two Sum](lib/solutions/00001_two_sum)
 - [13 - Roman to Integer](lib/solutions/00013_roman_to_integer)
+- [169 - Majority Element](lib/solutions/00169_majority_element)
 - [217 - Contains Duplicate](lib/solutions/00217_contains_duplicate)
 - [242 - Valid Anagram](lib/solutions/00242_valid_anagram)
 - [1207 - Unique Number of Occurrences](lib/solutions/01207_unique_number_of_occurrences)
