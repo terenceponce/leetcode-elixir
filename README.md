@@ -30,6 +30,7 @@ mix test
 - [1207 - Unique Number of Occurrences](lib/solutions/01207_unique_number_of_occurrences)
 - [1365 - How Many Numbers Are Smaller Than The Current Number](lib/solutions/01365_how_many_numbers_are_smaller_than_the_current_number)
 - [1512 - Number of Good Pairs](lib/solutions/01512_number_of_good_pairs)
+- [2068 - Check Whether Two Strings Are Almost Equivalent](lib/solutions/02068_check_whether_two_strings_are_almost_equivalent)
 
 #### Medium
 
