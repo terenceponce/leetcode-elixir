@@ -46,3 +46,16 @@ Explanation: The differences between the frequencies of each letter in word1 and
 - 'c' appears 3 times in word1 and 0 times in word2. The difference is 3.
 - 'd' appears 2 times in word1 and 0 times in word2. The difference is 2.
 ```
+
+## Thoughts
+
+Initially thought I should use `Enum.frequencies()` on both words and compare, but then I would
+have to do another loop to compare the difference between each hash maps, so I didn't go for it.
+
+I ended up just initializing a blank hash map and looping through each word to count the occurrences
+of each character. The loop on the first word will count positively on each character and the loop
+on the second word will count negatively on each character.
+
+Once we get a resulting hash map from counting both words, we will filter the hash map to remove
+any frequencies that are below `4` and return `false` if the filtered hash map still has data
+inside it and `true` if otherwise.
