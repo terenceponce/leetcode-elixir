@@ -7,32 +7,24 @@ defmodule LeetCodePractice.Solutions.CheckWhetherTwoStringsAreAlmostEquivalent d
   The frequency of a letter `x` is the number of times it occurs in the string.
   """
 
-  @spec call(word1 :: String.t, word2 :: String.t) :: boolean
+  @spec call(word1 :: String.t(), word2 :: String.t()) :: boolean
   def call(word1, word2) when byte_size(word1) == byte_size(word2) do
     %{}
-    |> count_occurrences(word1)
-    |> count_occurrences(word2, true)
+    |> count_frequencies(word1, 1)
+    |> count_frequencies(word2, -1)
     |> Enum.filter(fn {_, val} -> abs(val) > 3 end)
     |> Enum.any?()
-    |> Kernel.not
+    |> Kernel.not()
   end
 
   def call(_, _), do: false
 
-  defp count_occurrences(map, word, reverse \\ false) do
+  defp count_frequencies(map, word, increment) do
     word
     |> String.downcase()
     |> String.graphemes()
     |> Enum.reduce(map, fn char, map ->
-      case Map.get(map, char) do
-        nil ->
-          new_value = if reverse, do: -1, else: 1
-          Map.put(map, char, new_value)
-
-        val ->
-          new_value = if reverse, do: val - 1, else: val + 1
-          Map.put(map, char, new_value)
-      end
+      Map.update(map, char, increment, &(&1 + increment))
     end)
   end
 end
